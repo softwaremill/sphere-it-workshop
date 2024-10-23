@@ -21,3 +21,7 @@ dvc remote modify minio endpointurl http://localhost:9010/minio/
 dvc remote modify minio access_key_id minioadmin
 dvc remote modify minio secret_access_key miniopassword
 ```
+
+```
+mkdir minio-data
+```
