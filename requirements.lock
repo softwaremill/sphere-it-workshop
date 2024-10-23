@@ -10,9 +10,35 @@
 #   universal: false
 
 -e file:.
+aiobotocore==2.15.2
+    # via dvc-s3
+    # via s3fs
+aiohappyeyeballs==2.4.3
+    # via aiohttp
+aiohttp==3.10.10
+    # via aiobotocore
+    # via aiohttp-retry
+    # via fsspec
+    # via s3fs
+aiohttp-retry==2.8.3
+    # via dvc-http
+    # via scmrepo
+aioitertools==0.12.0
+    # via aiobotocore
+aiosignal==1.3.1
+    # via aiohttp
+amqp==5.2.0
+    # via kombu
+annotated-types==0.7.0
+    # via pydantic
+antlr4-python3-runtime==4.9.3
+    # via hydra-core
+    # via omegaconf
 anyio==4.6.2.post1
     # via httpx
     # via jupyter-server
+appdirs==1.4.4
+    # via iterative-telemetry
 argon2-cffi==23.1.0
     # via jupyter-server
 argon2-cffi-bindings==21.2.0
@@ -23,53 +49,157 @@ asttokens==2.4.1
     # via stack-data
 async-lru==2.0.4
     # via jupyterlab
+asyncssh==2.17.0
+    # via scmrepo
+atpublic==5.0
+    # via flufl-lock
 attrs==24.2.0
+    # via aiohttp
+    # via dvc
+    # via dvc-data
     # via jsonschema
     # via referencing
+    # via sqltrie
 babel==2.16.0
     # via jupyterlab-server
 beautifulsoup4==4.12.3
     # via gdown
     # via nbconvert
+billiard==4.2.1
+    # via celery
 bleach==6.1.0
     # via nbconvert
+boto3==1.35.36
+    # via aiobotocore
+botocore==1.35.36
+    # via aiobotocore
+    # via boto3
+    # via s3transfer
+celery==5.4.0
+    # via dvc
+    # via dvc-task
 certifi==2024.8.30
     # via httpcore
     # via httpx
     # via requests
 cffi==1.17.1
     # via argon2-cffi-bindings
+    # via cryptography
+    # via pygit2
 charset-normalizer==3.4.0
     # via requests
+click==8.1.7
+    # via celery
+    # via click-didyoumean
+    # via click-plugins
+    # via click-repl
+    # via typer
+click-didyoumean==0.3.1
+    # via celery
+click-plugins==1.1.1
+    # via celery
+click-repl==0.3.0
+    # via celery
+colorama==0.4.6
+    # via dvc
 comm==0.2.2
     # via ipykernel
+configobj==5.0.9
+    # via dvc
+cryptography==43.0.3
+    # via asyncssh
 debugpy==1.8.7
     # via ipykernel
 decorator==5.1.1
     # via ipython
 defusedxml==0.7.1
     # via nbconvert
+dictdiffer==0.9.0
+    # via dvc-data
+diskcache==5.6.3
+    # via dvc-data
+distro==1.9.0
+    # via dvc
+    # via iterative-telemetry
+dpath==2.2.0
+    # via dvc
+dulwich==0.22.3
+    # via dvc
+    # via dvc-studio-client
+    # via scmrepo
+dvc==3.56.0
+    # via dvc-s3
+    # via poc-transform
+dvc-data==3.16.6
+    # via dvc
+dvc-http==2.32.0
+    # via dvc
+dvc-objects==5.1.0
+    # via dvc
+    # via dvc-data
+dvc-render==1.0.2
+    # via dvc
+dvc-s3==3.2.0
+    # via dvc
+dvc-studio-client==0.21.0
+    # via dvc
+dvc-task==0.40.2
+    # via dvc
+entrypoints==0.4
+    # via gto
 executing==2.1.0
     # via stack-data
 fastjsonschema==2.20.0
     # via nbformat
 filelock==3.16.1
     # via gdown
+    # via iterative-telemetry
+flatten-dict==0.4.2
+    # via dvc
+    # via dvc-s3
+flufl-lock==8.1.0
+    # via dvc
 fqdn==1.5.1
     # via jsonschema
+frozenlist==1.5.0
+    # via aiohttp
+    # via aiosignal
+fsspec==2024.10.0
+    # via dvc
+    # via dvc-data
+    # via dvc-http
+    # via dvc-objects
+    # via s3fs
+    # via scmrepo
+funcy==2.0
+    # via dvc
+    # via dvc-task
+    # via gto
+    # via scmrepo
 gdown==5.2.0
     # via poc-transform
+gitdb==4.0.11
+    # via gitpython
+gitpython==3.1.43
+    # via scmrepo
+grandalf==0.8
+    # via dvc
+gto==1.7.1
+    # via dvc
 h11==0.14.0
     # via httpcore
 httpcore==1.0.6
     # via httpx
 httpx==0.27.2
     # via jupyterlab
+hydra-core==1.3.2
+    # via dvc
 idna==3.10
     # via anyio
     # via httpx
     # via jsonschema
     # via requests
+    # via yarl
 ipykernel==6.29.5
     # via jupyterlab
 ipython==8.28.0
@@ -77,6 +207,8 @@ ipython==8.28.0
     # via poc-transform
 isoduration==20.11.0
     # via jsonschema
+iterative-telemetry==0.0.9
+    # via dvc
 jedi==0.19.1
     # via ipython
 jinja2==3.1.4
@@ -84,6 +216,9 @@ jinja2==3.1.4
     # via jupyterlab
     # via jupyterlab-server
     # via nbconvert
+jmespath==1.0.1
+    # via boto3
+    # via botocore
 joblib==1.4.2
     # via scikit-learn
 json5==0.9.25
@@ -125,14 +260,25 @@ jupyterlab-pygments==0.3.0
     # via nbconvert
 jupyterlab-server==2.27.3
     # via jupyterlab
+kombu==5.4.2
+    # via celery
+    # via dvc
+    # via dvc-task
+markdown-it-py==3.0.0
+    # via rich
 markupsafe==3.0.2
     # via jinja2
     # via nbconvert
 matplotlib-inline==0.1.7
     # via ipykernel
     # via ipython
+mdurl==0.1.2
+    # via markdown-it-py
 mistune==3.0.2
     # via nbconvert
+multidict==6.1.0
+    # via aiohttp
+    # via yarl
 nbclient==0.10.0
     # via nbconvert
 nbconvert==7.16.4
@@ -143,6 +289,8 @@ nbformat==5.10.4
     # via nbconvert
 nest-asyncio==1.6.0
     # via ipykernel
+networkx==3.4.2
+    # via dvc
 notebook-shim==0.2.4
     # via jupyterlab
 numpy==2.1.2
@@ -152,9 +300,17 @@ numpy==2.1.2
     # via xgboost
 nvidia-nccl-cu12==2.23.4
     # via xgboost
+omegaconf==2.3.0
+    # via dvc
+    # via hydra-core
+orjson==3.10.10
+    # via dvc-data
+    # via sqltrie
 overrides==7.7.0
     # via jupyter-server
 packaging==24.1
+    # via dvc
+    # via hydra-core
     # via ipykernel
     # via jupyter-server
     # via jupyterlab
@@ -166,15 +322,24 @@ pandocfilters==1.5.1
     # via nbconvert
 parso==0.8.4
     # via jedi
+pathspec==0.12.1
+    # via dvc
+    # via scmrepo
 pexpect==4.9.0
     # via ipython
-platformdirs==4.3.6
+platformdirs==3.11.0
+    # via dvc
     # via jupyter-core
 prometheus-client==0.21.0
     # via jupyter-server
 prompt-toolkit==3.0.48
+    # via click-repl
     # via ipython
+propcache==0.2.0
+    # via yarl
 psutil==6.1.0
+    # via dvc
+    # via flufl-lock
     # via ipykernel
 ptyprocess==0.7.0
     # via pexpect
@@ -183,13 +348,33 @@ pure-eval==0.2.3
     # via stack-data
 pycparser==2.22
     # via cffi
+pydantic==2.9.2
+    # via gto
+pydantic-core==2.23.4
+    # via pydantic
+pydot==3.0.2
+    # via dvc
+pygit2==1.16.0
+    # via scmrepo
 pygments==2.18.0
     # via ipython
     # via nbconvert
+    # via rich
+pygtrie==2.5.0
+    # via dvc
+    # via dvc-data
+    # via scmrepo
+    # via sqltrie
+pyparsing==3.2.0
+    # via dvc
+    # via grandalf
+    # via pydot
 pysocks==1.7.1
     # via requests
 python-dateutil==2.9.0.post0
     # via arrow
+    # via botocore
+    # via celery
     # via jupyter-client
     # via pandas
 python-json-logger==2.0.7
@@ -198,6 +383,7 @@ pytz==2024.2
     # via pandas
 pyyaml==6.0.2
     # via jupyter-events
+    # via omegaconf
 pyzmq==26.2.0
     # via ipykernel
     # via jupyter-client
@@ -207,7 +393,10 @@ referencing==0.35.1
     # via jsonschema-specifications
     # via jupyter-events
 requests==2.32.3
+    # via dvc
+    # via dvc-studio-client
     # via gdown
+    # via iterative-telemetry
     # via jupyterlab-server
 rfc3339-validator==0.1.4
     # via jsonschema
@@ -215,30 +404,64 @@ rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
     # via jsonschema
     # via jupyter-events
+rich==13.9.3
+    # via dvc
+    # via gto
+    # via typer
 rpds-py==0.20.0
     # via jsonschema
     # via referencing
+ruamel-yaml==0.18.6
+    # via dvc
+    # via gto
+ruamel-yaml-clib==0.2.12
+    # via ruamel-yaml
+s3fs==2024.10.0
+    # via dvc-s3
+s3transfer==0.10.3
+    # via boto3
 scikit-learn==1.5.2
     # via poc-transform
 scipy==1.14.1
     # via scikit-learn
     # via xgboost
+scmrepo==3.3.8
+    # via dvc
+    # via gto
+semver==3.0.2
+    # via gto
 send2trash==1.8.3
     # via jupyter-server
 setuptools==75.2.0
     # via jupyterlab
+    # via zc-lockfile
+shellingham==1.5.4
+    # via typer
+shortuuid==1.0.13
+    # via dvc
+    # via dvc-task
+shtab==1.7.1
+    # via dvc
 six==1.16.0
     # via asttokens
     # via bleach
+    # via flatten-dict
     # via python-dateutil
     # via rfc3339-validator
+smmap==5.0.1
+    # via gitdb
 sniffio==1.3.1
     # via anyio
     # via httpx
 soupsieve==2.6
     # via beautifulsoup4
+sqltrie==0.11.1
+    # via dvc-data
 stack-data==0.6.3
     # via ipython
+tabulate==0.9.0
+    # via dvc
+    # via gto
 terminado==0.18.1
     # via jupyter-server
     # via jupyter-server-terminals
@@ -246,6 +469,8 @@ threadpoolctl==3.5.0
     # via scikit-learn
 tinycss2==1.3.0
     # via nbconvert
+tomlkit==0.13.2
+    # via dvc
 tornado==6.4.1
     # via ipykernel
     # via jupyter-client
@@ -253,7 +478,11 @@ tornado==6.4.1
     # via jupyterlab
     # via terminado
 tqdm==4.66.5
+    # via dvc
+    # via dvc-data
+    # via fsspec
     # via gdown
+    # via scmrepo
 traitlets==5.14.3
     # via comm
     # via ipykernel
@@ -267,14 +496,32 @@ traitlets==5.14.3
     # via nbclient
     # via nbconvert
     # via nbformat
+typer==0.12.5
+    # via gto
 types-python-dateutil==2.9.0.20241003
     # via arrow
+typing-extensions==4.12.2
+    # via asyncssh
+    # via pydantic
+    # via pydantic-core
+    # via typer
 tzdata==2024.2
+    # via celery
+    # via kombu
     # via pandas
 uri-template==1.3.0
     # via jsonschema
 urllib3==2.2.3
+    # via botocore
+    # via dulwich
     # via requests
+vine==5.1.0
+    # via amqp
+    # via celery
+    # via kombu
+voluptuous==0.15.2
+    # via dvc
+    # via dvc-studio-client
 wcwidth==0.2.13
     # via prompt-toolkit
 webcolors==24.8.0
@@ -284,5 +531,11 @@ webencodings==0.5.1
     # via tinycss2
 websocket-client==1.8.0
     # via jupyter-server
+wrapt==1.16.0
+    # via aiobotocore
 xgboost==2.1.1
     # via poc-transform
+yarl==1.16.0
+    # via aiohttp
+zc-lockfile==3.0.post1
+    # via dvc
