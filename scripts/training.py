@@ -1,3 +1,5 @@
+import sys
+sys.path.append("src")
 from sklearn.metrics import accuracy_score
 from poc_transform.data.reviews import prepare_data, read_data, split
 from poc_transform.model.xgb import TfIdfXgbClassifier
