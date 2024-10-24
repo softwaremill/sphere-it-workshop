@@ -12,10 +12,8 @@ class TfIdfXgbClassifier:
         X_vectorized = self.vectorizer.fit_transform(X)
         self.model.fit(X_vectorized, y)
 
-    def test(self, X, y):
+    def predict(self, X):
         X_vectorized = self.vectorizer.transform(X)
         return self.model.predict(X_vectorized)
-
-
 
 
