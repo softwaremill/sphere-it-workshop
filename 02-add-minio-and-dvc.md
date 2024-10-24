@@ -23,5 +23,17 @@ dvc remote modify minio secret_access_key miniopassword
 ```
 
 ```
+dvc add data/imdb_part_1.csv
+dvc add data/stopwords.txt
+```
+
+```
+git add data/imdb_part_1.csv.dvc
+git add data/stopwords.txt.dvc
+dvc push
+
+git commit -m "Added data descriptors"
+```
+```
 mkdir minio-data
 ```
