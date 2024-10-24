@@ -1,7 +1,11 @@
-image:
-  file: Dockerfile.gitpod
+image: gitpod/workspace-python-3.11
 
 tasks:
+  - name: Install rye
+    init: |
+      curl -sSf https://rye.astral.sh/get |  RYE_INSTALL_OPTION="--yes" bash
+      source "$HOME/.rye/env"
+      
   - name: Initialize project
     init: |
       rye init
