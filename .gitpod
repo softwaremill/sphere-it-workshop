@@ -1,0 +1,8 @@
+image:
+  file: Dockerfile.gitpod
+
+tasks:
+  - name: Initialize project
+    init: |
+      rye init
+      rye sync
